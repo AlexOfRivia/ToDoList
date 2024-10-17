@@ -20,7 +20,7 @@ void App::Update()
 //Rendering everything to the screen
 void App::Render()
 {
-	this->window->clear(sf::Color(25, 25, 25, 0));//clears old frame
+	this->window->clear(sf::Color(22,22,22,100));//clears old frame
 
 	//Rendering everything on the screen
 	this->window->draw(this->background);
@@ -42,9 +42,9 @@ void App::initNewTask()
 //Initializing window
 void App::initWindow()
 {
-	this->background.setSize(sf::Vector2f(70, 70));
-	this->background.setFillColor(sf::Color::White);
-	this->background.setPosition(100,100);
+	this->background.setSize(sf::Vector2f(700, 700));
+	this->background.setFillColor(sf::Color(37,37,37,100));
+	this->background.setPosition(50,50);
 	this->window = new sf::RenderWindow(sf::VideoMode(800, 800), "ToDo List",sf::Style::Titlebar | sf::Style::Close );
 	this->window->setFramerateLimit(144);
 	this->window->setVerticalSyncEnabled(false);
