@@ -10,7 +10,8 @@
 class Task
 {
 public:
-
+	//Public funtions
+	void initNewTask();
 
 
 	//Constructor

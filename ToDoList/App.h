@@ -15,6 +15,7 @@ public:
 	void Update();
 	void Render();
 
+	//Checking wether the app is running
 	const bool isRunning() const;
 
 	//Constructor & Destructor
@@ -25,11 +26,12 @@ private:
 	//Private perameters
 	sf::RenderWindow* window;
 	sf::RectangleShape background;
+	sf::RectangleShape addButton;
 	sf::Event event;
+	sf::Vector2i mousePos;
 
 
 	//Private functions
-	void initNewTask();
 	void initWindow();
 	void initVariables();
 
