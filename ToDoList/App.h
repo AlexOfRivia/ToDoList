@@ -15,6 +15,8 @@ public:
 	void Update();
 	void Render();
 
+	const bool isRunning() const;
+
 	//Constructor & Destructor
 	App();
 	~App();
@@ -22,6 +24,7 @@ public:
 private:
 	//Private perameters
 	sf::RenderWindow* window;
+	sf::RectangleShape background;
 	sf::Event event;
 
 

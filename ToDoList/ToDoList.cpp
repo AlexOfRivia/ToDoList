@@ -5,6 +5,12 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	App app;
+	while (app.isRunning())
+	{
+		app.Update();
+
+		app.Render();
+	}
 }
 
