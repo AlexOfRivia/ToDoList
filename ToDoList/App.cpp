@@ -10,13 +10,8 @@ void App::updateEvents()
 			this->window->close();
 	}
 
-	if (mousePos.x > addButton.getPosition().x && mousePos.x < (addButton.getPosition().x + addButton.getSize().x)) 
-	{
-		if (mousePos.y > addButton.getPosition().y && mousePos.y < (addButton.getPosition().y + addButton.getSize().y)) 
-		{
-				std::cout << "Button clicked\n";
-		}
-	}
+	
+
 }
 
 //Updating things in the App
@@ -32,7 +27,9 @@ void App::Render()
 
 	//Rendering everything on the screen
 	this->window->draw(this->background);
-	this->window->draw(this->addButton);
+	
+	//this->window->draw(this->addButton);
+
 	this->window->display();//displays new frame
 }
 
@@ -50,10 +47,10 @@ void App::initWindow()
 	this->background.setFillColor(sf::Color(37,37,37,100));
 	this->background.setPosition(50,50);
 
-	//Button for adding new tasks
-	this->addButton.setSize(sf::Vector2f(35,35));
-	this->addButton.setPosition(720, 10);
-	this->addButton.setFillColor(sf::Color::Green);
+	////Button for adding new tasks
+	//this->addButton.setSize(sf::Vector2f(35,35));
+	//this->addButton.setPosition(720, 10);
+	//this->addButton.setFillColor(sf::Color::Green);
 
 	//Main Window
 	this->window = new sf::RenderWindow(sf::VideoMode(800, 800), "ToDo List",sf::Style::Titlebar | sf::Style::Close );
