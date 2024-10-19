@@ -9,7 +9,8 @@ void App::updateEvents()
 		if (this->event.type == sf::Event::Closed)
 			this->window->close();
 	}
-	this->mousePosView = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
+
+	this->mousePosView = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window)); //This MUST be in the update method, as it updates the mouse position!
 	this->addButton->updateButton(this->mousePosView);
 
 }
