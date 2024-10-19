@@ -31,8 +31,7 @@ private:
 	/*Button addButton(720.f, 10.f, 35.f, 35.f);*/
 	Button* addButton;
 	sf::Event event;
-	const sf::Mouse mouse;
-	sf::Vector2i mousePos;
+	sf::Vector2f mousePosView;
 
 
 	//Private functions

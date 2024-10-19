@@ -9,8 +9,8 @@ void App::updateEvents()
 		if (this->event.type == sf::Event::Closed)
 			this->window->close();
 	}
-
-	
+	this->mousePosView = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
+	this->addButton->updateButton(this->mousePosView);
 
 }
 
@@ -27,9 +27,7 @@ void App::Render()
 
 	//Rendering everything on the screen
 	this->window->draw(this->background);
-	
-	//this->window->draw(this->addButton);
-
+	this->addButton->renderButton(this->window);
 	this->window->display();//displays new frame
 }
 
@@ -62,7 +60,6 @@ void App::initWindow()
 void App::initVariables()
 {
 	this->window = nullptr;
-	this->mousePos = sf::Mouse::getPosition();
 	//(X, Y, Width, Height, Idle Color, Hover Color, Pressed Color)
 	this->addButton = new Button(720.f, 10.f, 35.f, 35.f, sf::Color(42, 44, 42), sf::Color(82, 84, 82), sf::Color(102, 104, 102));
 }
