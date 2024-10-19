@@ -29,19 +29,16 @@ void Button::updateButton(const sf::Vector2f mousePos)
 
 	case BTN_IDLE:
 	{
-		//this->buttonShape.setFillColor(sf::Color(102,104,102));
 		this->buttonShape.setFillColor(idleColor);
 		break;
 	}
 	case BTN_HOVER:
 	{
-		//this->buttonShape.setFillColor(sf::Color(82, 84, 82));
 		this->buttonShape.setFillColor(sf::Color(hoverColor));
 		break;
 	}
 	case BTN_PRESSED:
 	{
-		//this->buttonShape.setFillColor(sf::Color(42,44,42));
 		this->buttonShape.setFillColor(clickColor);
 		break;
 	}

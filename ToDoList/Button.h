@@ -6,6 +6,9 @@
 #include <SFML/Window.hpp>
 #include <SFML/OpenGL.hpp>
 
+/*This Button class is mostly universal,
+so it can be used in other SFML project*/
+
 //Button state enum
 enum button_states {BTN_IDLE = 0, BTN_HOVER, BTN_PRESSED};
 
