@@ -5,6 +5,10 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
 #include <SFML/OpenGL.hpp>
+
+//Button state enum
+enum button_states {BTN_IDLE = 0, BTN_HOVER, BTN_PRESSED};
+
 class Button
 {
 public:
@@ -12,8 +16,13 @@ public:
 	void renderButton(sf::RenderTarget* target);
 	void updateButton(const sf::Vector2f mousePos);
 
+	//Accessors
+	const bool isPressed() const;
+
+
+
 	//Constructo & destructor
-	Button(float x, float y, float width, float height, sf::Color color);
+	Button(float x, float y, float width, float height, sf::Color pressColor, sf::Color hovColor, sf::Color idColor);
 	~Button();
 private:
 	//Private functions
@@ -21,7 +30,10 @@ private:
 	//Private parameters
 	sf::RectangleShape buttonShape;
 	sf::Color clickColor;
-
-
+	sf::Color idleColor;
+	sf::Color hoverColor;
+	short unsigned buttonState;
+	bool pressed;
+	bool hover;
 };
 

@@ -63,6 +63,8 @@ void App::initVariables()
 {
 	this->window = nullptr;
 	this->mousePos = sf::Mouse::getPosition();
+	//(X, Y, Width, Height, Idle Color, Hover Color, Pressed Color)
+	this->addButton = new Button(720.f, 10.f, 35.f, 35.f, sf::Color(42, 44, 42), sf::Color(82, 84, 82), sf::Color(102, 104, 102));
 }
 
 //Constructor
@@ -75,5 +77,6 @@ App::App()
 //Destructor
 App::~App()
 {
+	delete this->addButton;
 	delete this->window;
 }
