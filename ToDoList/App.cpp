@@ -4,6 +4,9 @@
 //Updating app events
 void App::updateEvents()
 {
+	sf::Clock clock;
+	deltaTime = sf::seconds(1.f / 60.f);
+
 	while (this->window->pollEvent(this->event))
 	{
 		if (this->event.type == sf::Event::Closed)
@@ -18,7 +21,7 @@ void App::updateEvents()
 	this->addButton->updateButton(this->mousePosView);
 	if (this->addButton->isPressed() == true)
 	{
-		this->task->initNewTask();
+		this->task->initNewTask(this->deltaTime);
 	}
 
 }
@@ -37,6 +40,7 @@ void App::Render()
 	//Rendering everything on the screen
 	this->window->draw(this->background);
 	this->addButton->renderButton(this->window);
+	this->task->renderTasks(*this->window);
 	this->window->display();//displays new frame
 }
 
