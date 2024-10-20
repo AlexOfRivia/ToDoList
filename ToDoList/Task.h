@@ -14,6 +14,8 @@ public:
 	//Public funtions
 	void initNewTask();
 
+	//MAKE TASKS 10 HIGH AND 700 TALL
+
 
 	//Constructor
 	Task();

@@ -18,7 +18,7 @@ void App::updateEvents()
 	this->addButton->updateButton(this->mousePosView);
 	if (this->addButton->isPressed() == true)
 	{
-		std::cout << "Button Pressed!\n";
+		this->task->initNewTask();
 	}
 
 }
@@ -54,10 +54,8 @@ void App::initWindow()
 	this->background.setFillColor(sf::Color(37,37,37,100));
 	this->background.setPosition(50,50);
 
-	////Button for adding new tasks
-	//this->addButton.setSize(sf::Vector2f(35,35));
-	//this->addButton.setPosition(720, 10);
-	//this->addButton.setFillColor(sf::Color::Green);
+	//Task
+	this->task = new Task();
 
 	//Main Window
 	this->window = new sf::RenderWindow(sf::VideoMode(800, 800), "ToDo List",sf::Style::Titlebar | sf::Style::Close );
@@ -85,4 +83,5 @@ App::~App()
 {
 	delete this->addButton;
 	delete this->window;
+	delete this->task;
 }

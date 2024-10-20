@@ -28,6 +28,7 @@ private:
 	//Private perameters
 	sf::RenderWindow* window;
 	sf::RectangleShape background;
+	Task* task;
 	/*Button addButton(720.f, 10.f, 35.f, 35.f);*/
 	Button* addButton;
 	sf::Event event;
