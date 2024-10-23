@@ -16,9 +16,6 @@ public:
 	void initNewTask(sf::Time dt);
 	void renderTasks(sf::RenderTarget& target);
 
-	//MAKE TASKS 10 HIGH AND 700 TALL
-
-
 	//Constructor
 	Task();
 

@@ -1,5 +1,11 @@
 #include "Task.h"
 
+
+/*TODO
+- ADD A DELETE BUTTON TO A TASK
+*/
+
+
 //Initializing a new task
 void Task::initNewTask(sf::Time dt)
 {
@@ -43,6 +49,9 @@ Task::Task() : taskBox(std::list<sf::RectangleShape>(1))
 {
 	firstTask = --taskBox.end();
 	this->initVariables();
+
+	//Colors for the delete button 
+
 	//Delete task idle color: (181, 38, 9)
 	//delete task hover color: (161, 34, 9)
 	//delete task click color: (133, 29, 9)
