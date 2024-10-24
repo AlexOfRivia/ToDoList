@@ -37,5 +37,6 @@ private:
 	//The task shape - tasks will be added like squares in the Snake game
 	std::list<sf::RectangleShape>::iterator firstTask;
 	std::list<sf::RectangleShape> taskBox;
+	
 };
 

@@ -19,9 +19,18 @@ void App::updateEvents()
 
 	this->mousePosView = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window)); //This MUST be in the update method, as it updates the mouse position!
 	this->addButton->updateButton(this->mousePosView);
+	
+	this->deleteButton->updateButton(this->mousePosView);
+
 	if (this->addButton->isPressed() == true)
 	{
 		this->task->initNewTask(this->deltaTime);
+		new Button(745, 50, 35.f, 35.f, sf::Color(133, 29, 7), sf::Color(161, 34, 8), sf::Color(181, 38, 9));
+	}
+
+	if (this->deleteButton->isPressed()== true)
+	{
+
 	}
 
 }
@@ -40,6 +49,8 @@ void App::Render()
 	//Rendering everything on the screen
 	this->window->draw(this->background);
 	this->addButton->renderButton(this->window);
+	this->deleteButton->renderButton(this->window);
+
 	this->task->renderTasks(*this->window);
 	this->window->display();//displays new frame
 }
@@ -73,6 +84,7 @@ void App::initVariables()
 	this->window = nullptr;
 	//(X, Y, Width, Height, Idle Color, Hover Color, Pressed Color)
 	this->addButton = new Button(720.f, 10.f, 35.f, 35.f, sf::Color(42, 44, 42), sf::Color(82, 84, 82), sf::Color(102, 104, 102));
+	this->deleteButton = new Button(640, 10, 70.f, 35.f, sf::Color(133, 29, 9), sf::Color(161, 34, 9), sf::Color(181, 38, 9));
 }
 
 //Constructor
@@ -86,6 +98,7 @@ App::App()
 App::~App()
 {
 	delete this->addButton;
+	delete this->deleteButton;
 	delete this->window;
 	delete this->task;
 }

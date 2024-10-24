@@ -17,7 +17,8 @@ void Task::initNewTask(sf::Time dt)
 		newPiece.setSize(sf::Vector2f(700, 50));
 		newPiece.setFillColor(sf::Color::White);
 		newPiece.setPosition(50,y);
-		firstTask = taskBox.insert(firstTask++, newPiece);
+		firstTask = taskBox.insert(firstTask++, newPiece);		
+		
 		y += 65;
 		elapsedTime = sf::Time::Zero;
 		std::cout << "Task added\n";
@@ -49,7 +50,7 @@ Task::Task() : taskBox(std::list<sf::RectangleShape>(1))
 {
 	firstTask = --taskBox.end();
 	this->initVariables();
-
+	
 	//Colors for the delete button 
 
 	//Delete task idle color: (181, 38, 9)

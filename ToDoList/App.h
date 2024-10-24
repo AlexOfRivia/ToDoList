@@ -31,9 +31,9 @@ private:
 	Task* task;
 	sf::Time deltaTime;
 	Button* addButton;
+	Button* deleteButton;
 	sf::Event event;
 	sf::Vector2f mousePosView;
-
 
 	//Private functions
 	void initWindow();

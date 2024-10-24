@@ -21,6 +21,7 @@ void Button::updateButton(const sf::Vector2f mousePos)
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
 		{
 			this->buttonState = BTN_PRESSED;
+			std::cout << "Button pressed\n";
 		}
 	}
 
