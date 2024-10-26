@@ -3,7 +3,6 @@
 //Initializing a new task
 void Task::initNewTask(sf::Time dt,const sf::Vector2f mousePos, sf::RenderTarget& target)
 {
-	//Max task number is 13
 	elapsedTime += dt;
 	if (elapsedTime.asSeconds() > 0.25 && taskBox.size()<12)
 	{
@@ -12,10 +11,13 @@ void Task::initNewTask(sf::Time dt,const sf::Vector2f mousePos, sf::RenderTarget
 		newPiece.setFillColor(sf::Color::White);
 		newPiece.setPosition(50,y);
 
+		//Adding a new task to the list
 		this->firstTask = this->taskBox.insert(this->firstTask++, newPiece);
+
+		//Adding a new button to the array
 		this->buttonArray[amountOfButtons] = new Button(725, (y+10), 20.f,20.f, sf::Color(133, 29, 7), sf::Color(161, 34, 8), sf::Color(181, 38, 9));
 		
-		amountOfButtons++;
+		amountOfButtons++; //Incrementing the button amount
 		y += 65;
 		elapsedTime = sf::Time::Zero;
 		std::cout << "Task added\n";
@@ -31,6 +33,8 @@ void Task::renderTasks(sf::RenderTarget& target)
 	{
 		target.draw(piece);
 	}
+
+	//Rendering all buttons in the array
 	for (int i = 0; i < amountOfButtons; i++)
 	{
 		this->buttonArray[i]->renderButton(&target);
@@ -39,6 +43,7 @@ void Task::renderTasks(sf::RenderTarget& target)
 
 void Task::updateButtons(const sf::Vector2f mousePos)
 {
+	//Updating all buttons in the array
 	for (int i=0;i<amountOfButtons;i++)
 	{
 		this->buttonArray[i]->updateButton(mousePos);
@@ -59,9 +64,7 @@ void Task::initVariables()
 //Constructor
 Task::Task() : taskBox(std::list<sf::RectangleShape>(1))
 {
-	this->firstTask = --this->taskBox.end();
-	//firstButton = --buttonList.end();
-	
+	this->firstTask = --this->taskBox.end();	
 	this->amountOfButtons = 0;
 	this->initVariables();
 	
@@ -75,6 +78,7 @@ Task::Task() : taskBox(std::list<sf::RectangleShape>(1))
 //Destructor
 Task::~Task()
 {
+	//Deleting the button array
 	delete[] this->buttonArray;
 }
 

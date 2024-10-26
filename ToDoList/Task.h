@@ -33,8 +33,8 @@ private:
 	std::string taskName;
 	bool isCompleted;
 	float y = 50;
-	int maxButtonAmount = 13;
-	int amountOfButtons;
+	int maxButtonAmount = 11; //The maximum amount of Buttons
+	int amountOfButtons; //Current amount of buttons
 	sf::Time elapsedTime;
 
 	//The task shape - tasks will be added like squares in the Snake game
