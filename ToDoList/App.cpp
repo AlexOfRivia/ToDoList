@@ -22,11 +22,14 @@ void App::updateEvents()
 	
 	this->deleteButton->updateButton(this->mousePosView);
 
+	this->task->updateButtons(this->mousePosView);
+
 	if (this->addButton->isPressed() == true)
 	{
-		this->task->initNewTask(this->deltaTime);
-		new Button(745, 50, 35.f, 35.f, sf::Color(133, 29, 7), sf::Color(161, 34, 8), sf::Color(181, 38, 9));
+		this->task->initNewTask(this->deltaTime, this->mousePosView, *this->window);
+		//new Button(745, 50, 35.f, 35.f, sf::Color(133, 29, 7), sf::Color(161, 34, 8), sf::Color(181, 38, 9));
 	}
+	this->task->updateButtons(this->mousePosView);
 
 	if (this->deleteButton->isPressed()== true)
 	{
@@ -39,6 +42,7 @@ void App::updateEvents()
 void App::Update()
 {
 	this->updateEvents();
+	this->task->updateButtons(this->mousePosView);
 }
 
 //Rendering everything to the screen
@@ -50,7 +54,6 @@ void App::Render()
 	this->window->draw(this->background);
 	this->addButton->renderButton(this->window);
 	this->deleteButton->renderButton(this->window);
-
 	this->task->renderTasks(*this->window);
 	this->window->display();//displays new frame
 }
