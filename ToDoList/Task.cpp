@@ -1,7 +1,7 @@
 #include "Task.h"
 
 //Initializing a new task
-void Task::initNewTask(sf::Time dt,const sf::Vector2f mousePos, sf::RenderWindow& appWindow)
+void Task::initNewTask(sf::Time dt,const sf::Vector2f mousePos, sf::RenderWindow& appWindow, sf::Event event)
 {
 	elapsedTime += dt;
 	if (elapsedTime.asSeconds() > 0.25 && taskBox.size() < 12)
@@ -16,43 +16,20 @@ void Task::initNewTask(sf::Time dt,const sf::Vector2f mousePos, sf::RenderWindow
 
 		//Adding a new button to the array
 		this->buttonArray[amountOfArrElements] = new Button(725, (y + 10), 20.f, 20.f, sf::Color(133, 29, 7), sf::Color(161, 34, 8), sf::Color(181, 38, 9));
-		this->textArray[amountOfArrElements].setPosition(50, (y + 5));
+		this->textArray[amountOfArrElements].setPosition(50, (y + 10));
 		this->textArray[amountOfArrElements].setFont(this->taskFont);
 		this->textArray[amountOfArrElements].setCharacterSize(20);
-		/*while (appWindow.isOpen())
-		{
-			while (appWindow.pollEvent(this->event))
-			{
-				if (this->event.type == sf::Event::TextEntered)
-				{
-					if (std::isprint(event.text.unicode))
-					{
-						this->userInput += static_cast<char>(event.text.unicode);
-					}
-				}
-				if (event.type == sf::Event::KeyPressed)
-				{
-						if (event.key.code == sf::Keyboard::BackSpace) {
-							if (!userInput.empty())
-								userInput.pop_back();
-						}
-				}
-				if (event.key.code == sf::Keyboard::Return) {
-					this->textArray[amountOfArrElements].setString(this->userInput);
-					std::cout << "Text added\n";
-					userInput += '\n';
-				}
-
-			}
-		}*/
+		this->userInput = "Test";
 		
-		
+		this->textArray[amountOfArrElements].setString(userInput);
 		amountOfArrElements++; //Incrementing the button & text amount
 		y += 65;
 		elapsedTime = sf::Time::Zero;
 		std::cout << "Task added\n";
 	}
 }
+		
+		
 
 
 
@@ -87,12 +64,10 @@ void Task::deleteTask()
 
 }
 
-//If current text doesn't work - use a button as a textBox, add a string to it, and a public setString method
-
 //Initalizing variables
 void Task::initVariables()
 {
-	taskFont.loadFromFile("ARIAL.ttf");
+	taskFont.loadFromFile("arial.ttf");
 	elapsedTime = sf::Time::Zero;
 }
 //Constructor

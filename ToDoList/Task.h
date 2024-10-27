@@ -13,7 +13,7 @@ class Task
 {
 public:
 	//Public funtions
-	void initNewTask(sf::Time dt, const sf::Vector2f mousePos, sf::RenderWindow& appWindow);
+	void initNewTask(sf::Time dt, const sf::Vector2f mousePos, sf::RenderWindow& appWindow, sf::Event event);
 	void renderTasks(sf::RenderTarget& target);
 	void updateButtons(const sf::Vector2f mousePos);
 
@@ -32,7 +32,6 @@ private:
 	sf::Text taskText; //this will be equal to the taskName while constructing new object
 	sf::Font taskFont;
 	std::string userInput;
-	sf::Event event;
 	bool isCompleted;
 	float y = 50;
 	int maxArrAmount = 11; //The maximum amount of Buttons

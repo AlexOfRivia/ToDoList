@@ -26,7 +26,7 @@ void App::updateEvents()
 
 	if (this->addButton->isPressed() == true)
 	{
-		this->task->initNewTask(this->deltaTime, this->mousePosView, *this->window);
+		this->task->initNewTask(this->deltaTime, this->mousePosView, *this->window, this->event);
 	}
 	this->task->updateButtons(this->mousePosView);
 
