@@ -27,10 +27,10 @@ void App::updateEvents()
 	if (this->addButton->isPressed() == true)
 	{
 		this->task->initNewTask(this->deltaTime, this->mousePosView, *this->window);
-		//new Button(745, 50, 35.f, 35.f, sf::Color(133, 29, 7), sf::Color(161, 34, 8), sf::Color(181, 38, 9));
 	}
 	this->task->updateButtons(this->mousePosView);
 
+	//Delete all tasks
 	if (this->deleteButton->isPressed()== true)
 	{
 
