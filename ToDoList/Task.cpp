@@ -16,6 +16,7 @@ void Task::initNewTask(sf::Time dt,const sf::Vector2f mousePos, sf::RenderWindow
 
 		//Adding a new button to the array
 		this->buttonArray[amountOfArrElements] = new Button(725, (y + 10), 20.f, 20.f, sf::Color(133, 29, 7), sf::Color(161, 34, 8), sf::Color(181, 38, 9));
+		this->textArray[amountOfArrElements] = new Textbox(600, 40 ,60, (y+5),20, sf::Color(40,40,40),this->taskFont);
 		
 		amountOfArrElements++; //Incrementing the button & text amount
 		y += 65;
@@ -40,6 +41,7 @@ void Task::renderTasks(sf::RenderTarget& target)
 	for (int i = 0; i < amountOfArrElements; i++)
 	{
 		this->buttonArray[i]->renderButton(&target); //Rendering the buttons
+		this->textArray[i]->renderTextbox(&target); //Rendering the textboxes
 	}
 }
 

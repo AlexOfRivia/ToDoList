@@ -5,13 +5,13 @@
 //Rendering the textbox
 void Textbox::renderTextbox(sf::RenderTarget* target)
 {
-
+	target->draw(this->textboxShape);
 }
 
 //Updating the textbox
 void Textbox::updateTextbox(const sf::Vector2f mousePos)
 {
-
+	//Updatin the mouse hover
 }
 
 //Constructor

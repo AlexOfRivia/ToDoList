@@ -6,6 +6,9 @@
 #include <SFML/Window.hpp>
 #include <SFML/OpenGL.hpp>
 
+/*This Textbox class is mostly universal,
+so it can be used in other SFML project*/
+
 class Textbox
 {
 public:
