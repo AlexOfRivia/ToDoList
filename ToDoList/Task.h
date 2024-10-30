@@ -14,9 +14,10 @@ class Task
 {
 public:
 	//Public funtions
-	void initNewTask(sf::Time dt, const sf::Vector2f mousePos, sf::RenderWindow& appWindow, sf::Event event);
+	void initNewTask(sf::Time dt, const sf::Vector2f mousePos, sf::RenderWindow& appWindow, sf::Event ev);
 	void renderTasks(sf::RenderTarget& target);
-	void updateButtons(const sf::Vector2f mousePos);
+	void updateButtons(const sf::Vector2f mousePos, sf::Event ev);
+	void updateTextboxes(sf::Event ev);
 
 	//Constructor
 	Task();

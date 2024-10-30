@@ -1,7 +1,7 @@
 #include "Task.h"
 
 //Initializing a new task
-void Task::initNewTask(sf::Time dt,const sf::Vector2f mousePos, sf::RenderWindow& appWindow, sf::Event event)
+void Task::initNewTask(sf::Time dt,const sf::Vector2f mousePos, sf::RenderWindow& appWindow, sf::Event ev)
 {
 	elapsedTime += dt;
 	if (elapsedTime.asSeconds() > 0.25 && taskBox.size() < 12)
@@ -16,8 +16,9 @@ void Task::initNewTask(sf::Time dt,const sf::Vector2f mousePos, sf::RenderWindow
 
 		//Adding a new button to the array
 		this->buttonArray[amountOfArrElements] = new Button(725, (y + 10), 20.f, 20.f, sf::Color(133, 29, 7), sf::Color(161, 34, 8), sf::Color(181, 38, 9));
-		this->textArray[amountOfArrElements] = new Textbox(600, 40 ,60, (y+5),20, sf::Color(40,40,40),this->taskFont);
+		this->textArray[amountOfArrElements] = new Textbox(600, 40 ,60, (y+5),15, sf::Color(40,40,40), sf::Color(30,30,30), this->taskFont, 120, true, false);
 		
+
 		amountOfArrElements++; //Incrementing the button & text amount
 		y += 65;
 		elapsedTime = sf::Time::Zero;
@@ -25,9 +26,6 @@ void Task::initNewTask(sf::Time dt,const sf::Vector2f mousePos, sf::RenderWindow
 	}
 }
 		
-		
-
-
 
 //Rendering tasks on the screen
 void Task::renderTasks(sf::RenderTarget& target)
@@ -45,13 +43,30 @@ void Task::renderTasks(sf::RenderTarget& target)
 	}
 }
 
-void Task::updateButtons(const sf::Vector2f mousePos)
+void Task::updateButtons(const sf::Vector2f mousePos, sf::Event ev)
 {
 	//Updating all buttons in the array
 	for (int i=0;i<amountOfArrElements;i++)
 	{
 		this->buttonArray[i]->updateButton(mousePos);
 	}
+	for (int i = 0; i < amountOfArrElements; i++)
+	{
+		
+		this->textArray[i]->updateTextbox(mousePos, ev);
+
+	}
+}
+
+void Task::updateTextboxes(sf::Event ev)
+{
+	for (int i = 0; i < amountOfArrElements; i++)
+	{
+		
+		this->textArray[i]->typedOn(ev);
+		
+	}
+
 }
 
 //Deleting a task via a button

@@ -7,6 +7,7 @@
 #include <SFML/Window.hpp>
 #include <SFML/OpenGL.hpp>
 #include "Button.h"
+#include "Textbox.h"
 
 
 class App

@@ -15,6 +15,11 @@ void App::updateEvents()
 		{
 			this->window->close();
 		}
+		if (event.type == sf::Event::TextEntered)
+		{
+			this->task->updateTextboxes(this->event);
+		}
+		
 	}
 
 	this->mousePosView = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window)); //This MUST be in the update method, as it updates the mouse position!
@@ -22,13 +27,13 @@ void App::updateEvents()
 	
 	this->deleteButton->updateButton(this->mousePosView);
 
-	this->task->updateButtons(this->mousePosView);
+	this->task->updateButtons(this->mousePosView, this->event);
 
 	if (this->addButton->isPressed() == true)
 	{
 		this->task->initNewTask(this->deltaTime, this->mousePosView, *this->window, this->event);
 	}
-	this->task->updateButtons(this->mousePosView);
+	this->task->updateButtons(this->mousePosView, this->event);
 
 	//Delete all tasks
 	if (this->deleteButton->isPressed()== true)
@@ -42,7 +47,7 @@ void App::updateEvents()
 void App::Update()
 {
 	this->updateEvents();
-	this->task->updateButtons(this->mousePosView);
+	this->task->updateButtons(this->mousePosView, this->event);
 }
 
 //Rendering everything to the screen
@@ -84,6 +89,8 @@ void App::initWindow()
 //Initializing variables
 void App::initVariables()
 {
+	sf::Font taskFont;
+	taskFont.loadFromFile("arial.ttf");
 	this->window = nullptr;
 	//(X, Y, Width, Height, Idle Color, Hover Color, Pressed Color)
 	this->addButton = new Button(720.f, 10.f, 35.f, 35.f, sf::Color(42, 44, 42), sf::Color(82, 84, 82), sf::Color(102, 104, 102));
