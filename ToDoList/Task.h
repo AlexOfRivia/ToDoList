@@ -19,7 +19,6 @@ public:
 	void updateButtons(const sf::Vector2f mousePos, sf::Event ev);
 	void updateTextboxes(sf::Event ev);
 	void clearTaskList();
-	void deleteTask();
 
 	//Constructor
 	Task();
@@ -30,6 +29,7 @@ public:
 private:
 	//Private functions
 	void initVariables();
+	void deleteTask();
 
 	//Private parameters
 	sf::Font taskFont;
