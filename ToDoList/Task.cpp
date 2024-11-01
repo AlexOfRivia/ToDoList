@@ -49,6 +49,11 @@ void Task::updateButtons(const sf::Vector2f mousePos, sf::Event ev)
 	for (int i=0;i<amountOfArrElements;i++)
 	{
 		this->buttonArray[i]->updateButton(mousePos);
+		if (this->buttonArray[i]->isPressed() == true)
+		{
+			//Deleting a task here
+			this->deleteTask(i);
+		}
 	}
 	for (int i = 0; i < amountOfArrElements; i++)
 	{
@@ -70,7 +75,7 @@ void Task::updateTextboxes(sf::Event ev)
 }
 
 //Deleting a task via a button
-void Task::deleteTask()
+void Task::deleteTask(int arrIndex)
 {
 
 }
@@ -97,17 +102,12 @@ Task::Task() : taskBox(std::list<sf::RectangleShape>(1))
 	this->amountOfArrElements = 0;
 	this->initVariables();
 	
-	//Colors for the delete button 
-
-	//Delete task idle color: (181, 38, 9)
-	//delete task hover color: (161, 34, 9)
-	//delete task click color: (133, 29, 9)
 }
 
 //Destructor
 Task::~Task()
 {
-	//Deleting the button array
+	//Deleting all dynamic array
 	delete[] this->buttonArray;
 	delete[] this->textArray;
 }

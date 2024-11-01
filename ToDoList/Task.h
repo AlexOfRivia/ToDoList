@@ -29,7 +29,7 @@ public:
 private:
 	//Private functions
 	void initVariables();
-	void deleteTask();
+	void deleteTask(int arrIndex);
 
 	//Private parameters
 	sf::Font taskFont;
