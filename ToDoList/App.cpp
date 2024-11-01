@@ -38,7 +38,7 @@ void App::updateEvents()
 	//Delete all tasks
 	if (this->deleteButton->isPressed()== true)
 	{
-
+		this->task->clearTaskList();
 	}
 
 }

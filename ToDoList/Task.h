@@ -18,6 +18,8 @@ public:
 	void renderTasks(sf::RenderTarget& target);
 	void updateButtons(const sf::Vector2f mousePos, sf::Event ev);
 	void updateTextboxes(sf::Event ev);
+	void clearTaskList();
+	void deleteTask();
 
 	//Constructor
 	Task();
@@ -27,7 +29,6 @@ public:
 
 private:
 	//Private functions
-	void deleteTask();
 	void initVariables();
 
 	//Private parameters

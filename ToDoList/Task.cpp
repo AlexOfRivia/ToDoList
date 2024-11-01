@@ -75,6 +75,15 @@ void Task::deleteTask()
 
 }
 
+//Deleting all tasks
+void Task::clearTaskList()
+{
+	this->taskBox = (std::list<sf::RectangleShape>(1));
+	this->firstTask = --this->taskBox.end();
+	this->amountOfArrElements = 0;
+	y = 50;
+}
+
 //Initalizing variables
 void Task::initVariables()
 {
