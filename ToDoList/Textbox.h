@@ -43,7 +43,10 @@ public:
 
 
 	//Constructor & destructor
-	Textbox(float width, float height, float posX, float posY, int textSize, sf::Color textBoxColor, sf::Color textboxHoverColor, sf::Font &textFont, int limit, bool isThereLimit, bool sel);
+	Textbox( 
+		float width, float height, float posX, float posY, int textSize, 
+		sf::Color textBoxColor, sf::Color textboxHoverColor, sf::Font &textFont, 
+		int limit, bool isThereLimit, bool sel);
 	~Textbox();
 private:
 	//Private parameters

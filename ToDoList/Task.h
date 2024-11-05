@@ -29,7 +29,6 @@ public:
 private:
 	//Private functions
 	void initVariables();
-	void deleteTask(int arrIndex);
 
 	//Private parameters
 	sf::Font taskFont;
@@ -43,6 +42,7 @@ private:
 	std::list<sf::RectangleShape>::iterator firstTask;
 	std::list<sf::RectangleShape> taskBox;
 
+	sf::RectangleShape** taskArray = new sf::RectangleShape * [maxArrAmount];
 	Button** buttonArray = new Button* [maxArrAmount];
 	Textbox** textArray = new Textbox* [maxArrAmount];
 	
