@@ -4,7 +4,7 @@
 void Task::initNewTask(sf::Time dt,const sf::Vector2f mousePos, sf::RenderWindow& appWindow, sf::Event ev)
 {
 	elapsedTime += dt;
-	if (elapsedTime.asSeconds() > 0.25 && amountOfArrElements < 11)
+	if (elapsedTime.asSeconds() > 0.25 && amountOfArrElements < 11 && y<=700)
 	{
 		//Adding a new task box to the array
 		this->taskArray[amountOfArrElements] = new sf::RectangleShape;
@@ -37,7 +37,7 @@ void Task::renderTasks(sf::RenderTarget& target)
 	{
 		target.draw(*taskArray[i]); //Rednering the task boxes
 		this->buttonArray[i]->renderButton(&target); //Rendering the buttons
-		this->textArray[i]->renderTextbox(&target); //Rendering the textboxes
+		this->textArray[i]->renderTextbox(&target); //Rendering the te6xtboxes
 	}
 }
 
@@ -88,11 +88,12 @@ void Task::initVariables()
 //Deleting a task
 void Task::deleteTask(int arrIndex)
 {
-	for (int j = (arrIndex - 1); j < this->amountOfArrElements; j++)
+	for (int j = (arrIndex); j <= this->amountOfArrElements; j++)
 	{
 		this->taskArray[j] = this->taskArray[j+1];
 		this->buttonArray[j] = this->buttonArray[j+1];
 		this->textArray[j] = this->textArray[j+1];
+		this->y -= j * 65;
 	}
 	this->amountOfArrElements--;
 	if (this->amountOfArrElements == 0)
