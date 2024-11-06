@@ -24,7 +24,7 @@ public:
 
 
 
-	//Constructo & destructor
+	//Constructor & destructor
 	Button(float x, float y, float width, float height, sf::Color pressColor, sf::Color hovColor, sf::Color idColor);
 	~Button();
 private:

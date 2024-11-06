@@ -29,12 +29,13 @@ public:
 private:
 	//Private functions
 	void initVariables();
+	void deleteTask(int arrIndex);
 
 	//Private parameters
 	sf::Font taskFont;
 	bool isCompleted;
 	float y = 50;
-	int maxArrAmount = 11; //The maximum amount of Buttons
+	int maxArrAmount = 11; //The maximum amount of elements
 	int amountOfArrElements; //Current amount of buttons & text in array
 	sf::Time elapsedTime;
 	
