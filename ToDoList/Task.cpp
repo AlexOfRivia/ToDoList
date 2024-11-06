@@ -93,7 +93,6 @@ void Task::deleteTask(int arrIndex)
 		this->taskArray[j] = this->taskArray[j+1];
 		this->buttonArray[j] = this->buttonArray[j+1];
 		this->textArray[j] = this->textArray[j+1];
-		this->y -= j * 65;
 	}
 	this->amountOfArrElements--;
 	if (this->amountOfArrElements == 0)

@@ -5,7 +5,6 @@
 #include <SFML/System.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
-#include <SFML/OpenGL.hpp>
 
 #define DELETE_KEY 8
 #define ENTER_KEY 13

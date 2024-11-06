@@ -4,7 +4,6 @@
 #include <SFML/System.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Window.hpp>
-#include <SFML/OpenGL.hpp>
 
 /*This Button class is mostly universal,
 so it can be used in other SFML project*/
